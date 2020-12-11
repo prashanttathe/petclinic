@@ -1,0 +1,40 @@
+{
+  "name": "protractor",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor JSFiles/ProtractorConfig.js",
+    "pretest": "tsc",
+    "protractor": "./node_modules/protractor/built/cli.js",
+    "prestart": "./node_modules/.bin/webdriver-manager update",
+    "start": "./node_modules/.bin/webdriver-manager start",
+    "Webdriver_update": "./node_modules/.bin/webdriver-manager update",
+    "clean": "./node_modules/.bin/webdriver-manager clean"
+  },
+  "author": "Vikram",
+  "license": "ISC",
+  "dependencies": {
+    "@typed/hashmap": "^1.0.1",
+    "@types/jasmine": "^3.4.0",
+    "@types/jasminewd2": "^2.0.6",
+    "@types/node": "^12.7.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "~7.1.1",
+    "chai-sorted": "^0.2.0",
+    "cucumber": "^5.1.0",
+    "exceljs": "^3.5.0",
+    "jasmine": "^3.4.0",
+    "moment": "^2.27.0",
+    "oracledb": "^4.2.0",
+    "properties-reader": "^0.3.1",
+    "protractor": "^5.4.3",
+    "protractor-http-client": "^1.0.4",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.9.3"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^5.0.2",
+    "protractor-cucumber-framework": "^6.1.3"
+  }
+}

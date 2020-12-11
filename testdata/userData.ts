@@ -1,0 +1,12 @@
+export default {
+    userData: {
+        AppURL: { 
+
+        },
+
+    }
+}
+
+
+
+
