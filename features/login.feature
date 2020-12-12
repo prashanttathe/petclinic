@@ -5,4 +5,3 @@ Feature: Validate Petclinic Application
         Then User should able to see Welcome to Petclinic message
         And User should able to see title of the webpage
 
-

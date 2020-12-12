@@ -13,8 +13,8 @@ let ReportDate = yyyy + '-' + mm + '-' + dd;
 
 export let config: Config = {
 
-  allScriptsTimeout: 100000,
-  getPageTimeout: 100000,
+  allScriptsTimeout: 50000,
+  getPageTimeout: 50000,
   // The address of a running selenium server.
   //seleniumAddress: 'http://localhost:4444/wd/hub',
   directConnect: true,
@@ -48,6 +48,7 @@ export let config: Config = {
   specs: [
     '../features/login.feature',
     '../features/homePage.feature',
+    '../features/newOwner.feature',
   ],
 
   cucumberOpts: {

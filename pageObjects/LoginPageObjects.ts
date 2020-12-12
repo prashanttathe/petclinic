@@ -5,5 +5,6 @@ export class LoginPageObjects {
 
     constructor() {
         this.WelcomeMsg = element(by.xpath("//*[contains(text(),'Welcome to Petclinic')]"));
+
     }
 }
