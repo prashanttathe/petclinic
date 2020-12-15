@@ -88,6 +88,7 @@ export let config: Config = {
     };
 
     reporter.generate(options);
+   
 
   }
 };

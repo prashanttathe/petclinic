@@ -87,7 +87,7 @@ cucumber_1.Then('Owners list should be displayed', function () {
 });
 cucumber_1.Given('User is on All Owners list page', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        yield protractor_1.browser.sleep(5000);
+        yield protractor_1.browser.sleep(3000);
         let pagename = yield HomeObj.PageName.getText();
         yield console.log("page name is : " + pagename);
     });

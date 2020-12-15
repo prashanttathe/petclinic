@@ -69,7 +69,7 @@ Then('Owners list should be displayed', async function () {
 
 });
 Given('User is on All Owners list page', async function () {
-    await browser.sleep(5000);
+    await browser.sleep(3000);
     let pagename = await HomeObj.PageName.getText();
     await console.log("page name is : " + pagename);
 });
