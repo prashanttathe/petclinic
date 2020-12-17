@@ -16,10 +16,10 @@ ENV REST_PORT=$REST_PORT
 
 # install and cache app dependencies
 COPY package.json /app/package.json
+COPY . /app
 RUN npm install
 RUN npm start
 RUN npm test
 
 
 # add app
-COPY . /app
