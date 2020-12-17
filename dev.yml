@@ -1,0 +1,54 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Petclinic-deployment
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: Petclinic
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: Petclinic
+    spec:
+      containers:
+      - name: pods-Petclinic-deployment
+        image: tntaksreg.azurecr.io/Petclinic
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4200
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: Petclinic-service
+    namespace: dev
+spec:
+  selector:
+    app: Petclinic
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4200
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: Petclinic-ingress
+  namespace: dev
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: Petclinic.e46708b92c054086909b.eastus.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: Petclinic-service
+          servicePort: 80
+        path: /

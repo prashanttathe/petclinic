@@ -1,8 +1,6 @@
 import { Config, browser } from "protractor";
 let reporter = require('cucumber-html-reporter');
 
-//var  Feature = 'APITestingDemo';
-
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -53,7 +51,7 @@ export let config: Config = {
 
   cucumberOpts: {
     // require step definitions
-    //tags:"@login",
+    tags:"@smoke",
     format: 'json:./cucumberreport.json',
     strict: true,
 
@@ -67,6 +65,7 @@ export let config: Config = {
 
     browser.ignoreSynchronization = false;
     browser.driver.manage().window().maximize();
+
   },
   onComplete: () => {
     var options = {
@@ -88,7 +87,7 @@ export let config: Config = {
     };
 
     reporter.generate(options);
-   
+
 
   }
 };

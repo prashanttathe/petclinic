@@ -1,5 +1,5 @@
 Feature: Validate Petclinic Application
-
+    @smoke
     Scenario: Verify User will able to navigate to Petclinic application
         Given User will navigate to Petclinic url
         Then User should able to see Welcome to Petclinic message
