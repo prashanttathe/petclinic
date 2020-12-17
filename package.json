@@ -9,7 +9,7 @@
     "protractor": "./node_modules/protractor/built/cli.js",
     "prestart": "./node_modules/.bin/webdriver-manager update",
     "start": "./node_modules/.bin/webdriver-manager start",
-    "Webdriver_update": "./node_modules/.bin/webdriver-manager update",
+    "webdriver_update": "./node_modules/.bin/webdriver-manager update",
     "clean": "./node_modules/.bin/webdriver-manager clean"
   },
   "author": "Vikram",
