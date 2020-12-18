@@ -12,28 +12,18 @@ pipeline {
 				sh "git clone https://github.com/${GIT_REPO_NAME}/${APP_NAME}.git"
 			}
 		}
-		stage('Azure Cloud Connect'){
+		stage('Run protractor script'){
 			steps {
-				sh "az login --identity"
-				sh "az account set --subscription aafef7b4-6886-45b4-afeb-2556fc54b425"
-				sh "az aks get-credentials --resource-group atos-tra-pla-rg --name atos-tra-pla-cluster"			
+				sh "cd /petclinic"
+				sh "npm install"
+				sh "npm start"
+				sh "npm test"			
 			}
-		}
-		stage('Build & Image'){
-			steps {
-				sh "az acr build -r tntaksreg -t ${APP_NAME} ."			
-			}
-		}
-		stage('Deploy'){
-			steps {
-				sh "kubectl delete deployment ${APP_NAME}-deployment --namespace=${DEPLOY_ENV}"
-				sh "kubectl apply -f ${APP_NAME}/${DEPLOY_ENV}.yml --namespace=${DEPLOY_ENV}"
-			}
-		}
+		}		
     	}
 	post { 
 		success { 
-		    echo "Your application URL will be - http://${APP_NAME}.e46708b92c054086909b.eastus.aksapp.io"
+		    echo "TEsting completed, results will found at - /petclinic/Reports/2020-12-18.html"
 		}
 		failure { 
 		    echo "Please check logs for more details."
