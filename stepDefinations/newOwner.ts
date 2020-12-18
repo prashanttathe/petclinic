@@ -4,8 +4,7 @@ import { HomePageObjects } from "../pageObjects/HomePageObjects";
 import { browser, by, element, ElementFinder, protractor } from "protractor";
 import testdata from "../testdata/userData";
 
-const chai = require("chai").use(require("chai-as-promised"));
-const expect = chai.expect;
+const expect = global['chai'].expect;
 
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(50 * 1000);

@@ -3,8 +3,7 @@ import { LoginPageObjects } from "../pageObjects/LoginPageObjects";
 import { HomePageObjects } from "../pageObjects/HomePageObjects";
 import { browser } from "protractor";
 
-const chai = require("chai").use(require("chai-as-promised"));
-const expect = chai.expect;
+const expect = global['chai'].expect;
 
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(50 * 1000);

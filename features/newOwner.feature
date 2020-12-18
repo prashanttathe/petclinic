@@ -1,5 +1,5 @@
 Feature: User going to validate New Owner Page for Petclinic application
-    @smoke
+
     Scenario: Verify user is able to add New Owner
         Given User is on New Owner page
         When User enter valid First Name, Last Name, Address, City, Telephone

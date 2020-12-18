@@ -1,5 +1,6 @@
 import { Config, browser } from "protractor";
 let reporter = require('cucumber-html-reporter');
+const globalAny:any=global;
 
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
@@ -47,11 +48,12 @@ export let config: Config = {
     '../features/login.feature',
     '../features/homePage.feature',
     '../features/newOwner.feature',
+    '../features/editOwner.feature',
   ],
 
   cucumberOpts: {
     // require step definitions
-    tags:"@smoke",
+    tags: "@smoke",
     format: 'json:./cucumberreport.json',
     strict: true,
 
@@ -65,7 +67,8 @@ export let config: Config = {
 
     browser.ignoreSynchronization = false;
     browser.driver.manage().window().maximize();
-
+    const chai = require("chai").use(require("chai-as-promised"));
+    globalAny.chai=chai;
   },
   onComplete: () => {
     var options = {

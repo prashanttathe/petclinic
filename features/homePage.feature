@@ -9,7 +9,7 @@ Feature: User going to validate Petclinic Application homepage
         Given User is on Petclinic home page
         When User clicks on owners tab
         Then ALL and ADD NEW owners sub-menus should be displayed
-
+    @smoke
     Scenario: Verify user clicks on ALL sub-menu on Owners tab
         Given User is on Owners tab
         When User clicks on ALL sub-menu
@@ -19,7 +19,7 @@ Feature: User going to validate Petclinic Application homepage
         Given User is on All Owners list page
         When User clicks on Add Owner button
         Then Add New Owner page should be displayed
-    @smoke
+    
     Scenario: Verify user clicks on ADD NEW sub-menu on Owners tab
         Given User is on Owners tab
         When User clicks on ADD NEW sub-menu
